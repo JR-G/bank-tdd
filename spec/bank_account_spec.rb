@@ -19,7 +19,7 @@ describe BankAccount do
 
   it 'returns balance equal to deposited amount' do
     value = rand(1..10)
-    expect(subject.deposit(value)).to eq :current_balance
+    expect(subject.deposit(value)).to eq subject.current_balance
   end
 
   # As a user I would like to be able to withdraw money from my bank account
