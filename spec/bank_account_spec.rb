@@ -12,17 +12,18 @@ describe BankAccount do
   # As a user I would like to be able to deposit money into my bank account
   it { is_expected.to respond_to(:deposit).with(1).argument }
 
-  it 'returns a deposit confirmation' do
-    value = rand(1..10)
-    expect(subject.deposit(value)).to eq value
-  end
-
   it 'returns balance equal to deposited amount' do
     value = rand(1..10)
     expect(subject.deposit(value)).to eq subject.current_balance
   end
 
   # As a user I would like to be able to withdraw money from my bank account
-  it { is_expected.to respond_to :withdraw }
+  it { is_expected.to respond_to(:withdraw).with(1).argument }
+
+  it 'returns a correct balance after a withdrawal' do
+    balance = BankAccount.new(10)
+    value = rand(1...10)
+    expect(subject.withdraw(value)).to eq balance.current_balance - value
+  end
   
 end
