@@ -23,5 +23,6 @@ describe BankAccount do
   end
 
   # As a user I would like to be able to withdraw money from my bank account
+  it { is_expected.to respond_to :withdraw }
   
 end
