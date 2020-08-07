@@ -14,4 +14,7 @@ class BankAccount
     puts "Deposit of #{amount} successful"
     @current_balance += amount
   end
+
+  def withdraw(amount)
+  end
 end
