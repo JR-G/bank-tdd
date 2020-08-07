@@ -16,5 +16,7 @@ class BankAccount
   end
 
   def withdraw(amount)
+    puts "Withdrawal of #{amount} successful"
+    @current_balance -= amount
   end
 end

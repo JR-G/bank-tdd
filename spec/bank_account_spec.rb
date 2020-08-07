@@ -21,9 +21,9 @@ describe BankAccount do
   it { is_expected.to respond_to(:withdraw).with(1).argument }
 
   it 'returns a correct balance after a withdrawal' do
-    balance = BankAccount.new(10)
+    balance = BankAccount.new(rand(1..10))
     value = rand(1...10)
-    expect(subject.withdraw(value)).to eq balance.current_balance - value
+    expect(balance.withdraw(value)).to eq balance.current_balance
   end
   
 end
