@@ -1,6 +1,10 @@
 require 'bank_account'
 
 describe BankAccount do
+  it 'can create an instance of bank account' do
+    bank_account = BankAccount.new
+    expect(bank_account).to be_kind_of(BankAccount)
+  end
   
   # As a user I would like to be able to see my balance
   it { is_expected.to respond_to :balance }
